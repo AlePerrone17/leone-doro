@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Il Leone d'Oro · Caffetteria Tabaccheria a Surbo (LE)</title>
+<meta name="description" content="Il Leone d'Oro, caffetteria e tabaccheria a Surbo (LE) dal 1984. Via IV Novembre 61. Aperti dal lunedì al sabato 05:30–21:00, domenica 08:00–13:30.">
+<meta name="theme-color" content="#d5ad8f">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Il Leone d'Oro · Caffetteria Tabaccheria a Surbo">
+<meta property="og:description" content="Caffè, tabacchi, bollette, ricariche e punto di ritiro pacchi. Via IV Novembre 61, Surbo (LE). Dal 1984.">
+<meta property="og:image" content="img/anteprima.jpg">
+<link rel="preload" href="fonts/bricolage-grotesque-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/figtree-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Il Leone d'Oro","description":"Caffetteria e tabaccheria, rivendita n. 3","telephone":"+39 0832 361043",
+ "address":{"@type":"PostalAddress","streetAddress":"Via IV Novembre 61","postalCode":"73010","addressLocality":"Surbo","addressRegion":"LE","addressCountry":"IT"},
+ "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"05:30","closes":"21:00"},
+ {"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"08:00","closes":"13:30"}],"foundingDate":"1984"}
+</script>
+<style>
+@font-face{font-family:"Bricolage Grotesque";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/bricolage-grotesque-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Bricolage Grotesque";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/bricolage-grotesque-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Bricolage Grotesque";font-style:normal;font-weight:800;font-display:swap;src:url(fonts/bricolage-grotesque-latin-800-normal.woff2) format("woff2")}
+@font-face{font-family:"Figtree";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/figtree-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Figtree";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/figtree-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Figtree";font-style:italic;font-weight:600;font-display:swap;src:url(fonts/figtree-latin-600-italic.woff2) format("woff2")}
+@font-face{font-family:"Figtree";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/figtree-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Figtree";font-style:normal;font-weight:800;font-display:swap;src:url(fonts/figtree-latin-800-normal.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/ibm-plex-mono-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/ibm-plex-mono-latin-600-normal.woff2) format("woff2")}
+img{max-width:100%}[hidden]{display:none!important}
+
+/* Layout: "La giornata del bar". La pagina segue l'orologio del locale: la fascia d'apertura cambia colore e messaggio
+   in base all'ora (colazione, pausa, pomeriggio, sera, chiuso) con una barra della giornata 05:30→21:00.
+   Servizi in quattro banchi, orari stampati come uno scontrino, "dal 1984" come numero protagonista,
+   barra fissa Chiama/Indicazioni sul telefono. */
+:root{
+  --bg:#F6EEE4; --surface:#FFFAF4; --ink:#24140B; --muted:#5E4636; --line:#E3D3C2;
+  --crema:#d5ad8f; --crema-2:#b98d6c; --espresso:#2A1810; --blue:#1B2A4A; --gold:#9A6A1C;
+  --ok:#2F7D45; --closed:#B23A2A; --paper:#FFFDF8; --paper-ink:#24140B;
+  --logo-filter:none;
+  --f-display:"Bricolage Grotesque", "Arial Black", system-ui, sans-serif;
+  --f-body:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --wrap:1180px; --r:22px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#17100B; --surface:#22170F; --ink:#F4EADF; --muted:#C9B3A1; --line:#3B2B1F;
+  --espresso:#0E0905; --blue:#4462A0; --gold:#E0B25C; --ok:#5DBB78; --closed:#E2705E;
+  --logo-filter:brightness(0) invert(.92) sepia(.25); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#17100B; --surface:#22170F; --ink:#F4EADF; --muted:#C9B3A1; --line:#3B2B1F;
+  --espresso:#0E0905; --blue:#4462A0; --gold:#E0B25C; --ok:#5DBB78; --closed:#E2705E;
+  --logo-filter:brightness(0) invert(.92) sepia(.25); color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:18px;font-weight:600;line-height:1.6;overflow-x:clip}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:clamp(16px,4vw,36px)}
+h1,h2,h3{font-family:var(--f-display);font-weight:800;line-height:1.02;letter-spacing:-.02em;text-wrap:balance;margin:0}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:8px}
+.eyebrow{font-family:var(--f-mono);font-weight:600;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- header ---------- */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.brand .em{width:46px;height:auto;filter:var(--logo-filter)}
+.brand .wm{height:26px;width:auto;filter:var(--logo-filter)}
+nav ul{display:flex;align-items:center;gap:clamp(14px,2.4vw,30px);list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;font-weight:700;font-size:16px}
+nav a:hover{color:var(--gold)}
+.call{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;background:var(--ink);color:var(--bg)!important;font-weight:800}
+.call:hover{background:var(--gold)}
+@media (max-width:820px){nav li:not(:last-child){display:none}}
+@media (max-width:420px){.brand .wm{height:22px}.call span{display:none}}
+
+/* ---------- apertura che segue l'ora ---------- */
+.hero{--h-bg:linear-gradient(160deg,#F6EEE4,#E9D6BF);--h-ink:#24140B;--h-sub:#5E4636;--h-chip:rgba(36,20,11,.08);--h-logo:none;
+  background:var(--h-bg);color:var(--h-ink);transition:background .6s ease}
+.hero[data-moment="mattina"]{--h-bg:linear-gradient(160deg,#FBE7CF 0%,#F3C79C 100%)}
+.hero[data-moment="giorno"]{--h-bg:linear-gradient(160deg,#F6EEE4 0%,#E6CFB4 100%)}
+.hero[data-moment="pomeriggio"]{--h-bg:linear-gradient(160deg,#EBCDAE 0%,#d5ad8f 100%)}
+.hero[data-moment="sera"]{--h-bg:linear-gradient(160deg,#2A1810 0%,#1B2A4A 100%);--h-ink:#F6EBDD;--h-sub:#D9C3AE;--h-chip:rgba(255,240,225,.12);--h-logo:brightness(0) invert(.93) sepia(.25)}
+.hero[data-moment="chiuso"]{--h-bg:linear-gradient(160deg,#1C1712 0%,#2A1810 100%);--h-ink:#F6EBDD;--h-sub:#CDB8A5;--h-chip:rgba(255,240,225,.1);--h-logo:brightness(0) invert(.93) sepia(.25)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(28px,5vw,72px);align-items:center;padding-block:clamp(40px,6vw,80px)}
+@media (max-width:880px){.hero .wrap{grid-template-columns:1fr}}
+.hero .wm-big{display:block;width:min(420px,90%);height:auto;filter:var(--h-logo)}
+.hero .kicker{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:var(--h-chip);font-weight:800;font-size:15px;letter-spacing:.02em}
+.chip .dot{width:10px;height:10px;border-radius:50%;background:#3FA35F;box-shadow:0 0 0 4px rgba(63,163,95,.22)}
+.chip .dot.off{background:#E2705E;box-shadow:0 0 0 4px rgba(226,112,94,.22)}
+.hero h1{font-size:clamp(42px,6.6vw,84px);margin-top:18px}
+.hero .sub{margin-top:16px;font-size:clamp(19px,1.9vw,23px);color:var(--h-sub);max-width:40ch;font-weight:600}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;text-decoration:none;font-weight:800;font-size:17px;transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-main{background:var(--h-ink);color:var(--crema)}
+.hero[data-moment="sera"] .btn-main,.hero[data-moment="chiuso"] .btn-main{color:#2A1810}
+.btn-ghost{border:2px solid currentColor}
+
+/* barra della giornata */
+.day{margin-top:34px;max-width:560px}
+.day-head{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:13px;font-weight:600;color:var(--h-sub)}
+.day-track{position:relative;height:14px;border-radius:999px;background:var(--h-chip);margin-top:8px;overflow:visible}
+.day-fill{position:absolute;inset:0 auto 0 0;width:0;border-radius:999px;background:linear-gradient(90deg,#E8A84A,#C2622B 60%,#6B2E1A)}
+.day-now{position:absolute;top:50%;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;background:var(--h-ink);border:4px solid var(--crema);left:0}
+.day-ticks{display:flex;justify-content:space-between;margin-top:8px;font-family:var(--f-mono);font-size:12px;color:var(--h-sub)}
+
+.reel-frame{justify-self:center;width:min(330px,100%);aspect-ratio:9/16;border-radius:34px;padding:10px;background:var(--h-ink);box-shadow:0 30px 60px -24px rgba(20,10,4,.6);position:relative}
+.reel-frame video{display:block;width:100%;height:100%;object-fit:cover;border-radius:26px;background:#d5ad8f}
+.reel-frame::after{content:"";position:absolute;top:18px;left:50%;width:70px;height:6px;margin-left:-35px;border-radius:9px;background:rgba(255,255,255,.18)}
+@media (max-width:880px){.reel-frame{width:min(260px,80%)}}
+
+/* ---------- sezioni ---------- */
+section.block{padding-block:clamp(64px,9vw,112px)}
+.head{display:grid;gap:12px;margin-bottom:clamp(30px,4vw,52px);max-width:62ch}
+.head h2{font-size:clamp(36px,5.2vw,64px)}
+.head p{color:var(--muted);font-size:20px}
+
+/* banchi dei servizi */
+.counters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+@media (max-width:1100px){.counters{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.counters{grid-template-columns:1fr}}
+.counter{background:var(--surface);border:1.5px solid var(--line);border-radius:var(--r);padding:26px 24px 24px;display:flex;flex-direction:column;gap:16px;min-width:0;transition:transform .2s ease,border-color .2s ease}
+.counter:hover{transform:translateY(-4px);border-color:var(--crema-2)}
+.counter .ic{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;background:var(--crema);color:#2A1810}
+.counter .ic svg{width:30px;height:30px}
+.counter .ic.t{background:#1B2A4A;color:#fff;font:900 30px/1 Arial,Helvetica,sans-serif;border-radius:10px;box-shadow:inset 0 0 0 3px #e9e9e9}
+.counter h3{font-size:28px}
+.counter .when{font-family:var(--f-mono);font-size:13px;font-weight:600;color:var(--gold);letter-spacing:.04em}
+.counter ul{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.counter li{display:flex;gap:10px;align-items:baseline;padding:7px 0;border-top:1px solid var(--line);font-weight:700;font-size:17px}
+.counter li::before{content:"";flex:none;width:8px;height:8px;border-radius:2px;background:var(--crema-2);transform:translateY(-2px) rotate(45deg)}
+.counter .note{margin-top:auto;font-size:14px;font-style:italic;color:var(--muted)}
+.games{margin-top:22px;border:1.5px dashed var(--line);border-radius:16px;padding:16px 22px;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline}
+.games strong{font-family:var(--f-mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.games span{font-weight:800}
+.games small{flex-basis:100%;font-size:14px;color:var(--muted)}
+
+/* orari come scontrino + dove siamo */
+.visit{background:var(--surface);border-block:1px solid var(--line)}
+.visit .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,6vw,80px);align-items:start}
+@media (max-width:900px){.visit .wrap{grid-template-columns:1fr}}
+.receipt{justify-self:center;width:min(420px,100%);background:var(--paper);color:var(--paper-ink);font-family:var(--f-mono);font-size:16px;font-weight:500;padding:30px 28px 46px;box-shadow:0 22px 44px -22px rgba(30,15,5,.55);transform:rotate(-1.2deg);position:relative;font-variant-numeric:tabular-nums;
+  -webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50% / 18px 100%;mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50% / 18px 100%}
+.receipt .r-head{text-align:center;display:grid;gap:2px;font-size:14px}
+.receipt .r-head b{font-size:19px;font-weight:600;letter-spacing:.06em}
+.receipt hr{border:0;border-top:2px dashed rgba(36,20,11,.35);margin:16px 0}
+.receipt .r-meta{display:flex;justify-content:space-between;font-size:13px}
+.receipt table{width:100%;border-collapse:collapse}
+.receipt td{padding:5px 0}
+.receipt td:last-child{text-align:right}
+.receipt tr.today td{font-weight:600;background:rgba(213,173,143,.45)}
+.receipt tr.today td:first-child::after{content:"  ◀ OGGI"}
+.receipt .r-tot{display:flex;justify-content:space-between;font-weight:600;font-size:18px}
+.receipt .r-foot{text-align:center;font-size:13px;margin-top:14px}
+.receipt .barcode{height:46px;margin:16px auto 0;width:78%;background:repeating-linear-gradient(90deg,#24140B 0 2px,transparent 2px 4px,#24140B 4px 7px,transparent 7px 9px,#24140B 9px 10px,transparent 10px 13px)}
+
+.where h2{font-size:clamp(34px,4.6vw,56px)}
+.addr{margin-top:18px;font-family:var(--f-display);font-weight:800;font-size:clamp(28px,3.4vw,40px);line-height:1.1}
+.addr small{display:block;font-family:var(--f-body);font-size:20px;font-weight:700;color:var(--muted);margin-top:6px;letter-spacing:0}
+.contact-list{display:grid;gap:12px;margin-top:28px}
+.contact{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:16px 20px;border-radius:16px;background:var(--bg);border:1.5px solid var(--line)}
+.contact .k{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.contact .v{font-size:22px;font-weight:800;text-decoration:none}
+.copy{font:800 14px var(--f-body);cursor:pointer;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 14px}
+.copy:hover{border-color:var(--crema-2)}
+.visit .btn-main{background:var(--ink);color:var(--bg);margin-top:22px}
+
+/* dal 1984 */
+.since .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,6vw,80px);align-items:center}
+@media (max-width:860px){.since .wrap{grid-template-columns:1fr}}
+.year{font-family:var(--f-display);font-weight:800;font-size:clamp(110px,15vw,210px);line-height:.82;letter-spacing:-.05em;color:var(--crema);-webkit-text-stroke:2px var(--crema-2)}
+.year-cap{font-family:var(--f-mono);font-weight:600;font-size:15px;color:var(--gold);margin-top:12px;letter-spacing:.06em}
+.since h2{font-size:clamp(34px,4.4vw,54px)}
+.since p.txt{margin-top:18px;font-size:21px;color:var(--muted);max-width:46ch}
+.since .emb{width:120px;height:auto;margin-top:26px;filter:var(--logo-filter);opacity:.9}
+
+/* footer */
+footer{background:var(--espresso);color:#EADBCB;padding-block:48px calc(48px + 76px)}
+@media (min-width:821px){footer{padding-bottom:48px}}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:28px;align-items:flex-end}
+footer .wm{height:34px;width:auto;filter:brightness(0) invert(.9) sepia(.3)}
+footer p{font-size:16px;line-height:1.75;margin-top:12px;color:#CDB9A6}
+footer p b{color:#F3E6D8}
+footer .soc{display:flex;gap:10px}
+footer .soc a{text-decoration:none;font-weight:800;font-size:15px;padding:8px 16px;border-radius:999px;border:1.5px solid rgba(234,219,203,.35)}
+footer .soc a:hover{border-color:var(--crema);color:var(--crema)}
+
+/* barra azioni fissa sul telefono */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:30;display:none;gap:10px;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+.dock a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:13px;border-radius:14px;text-decoration:none;font-weight:800;font-size:17px}
+.dock a svg{width:20px;height:20px}
+.dock .d1{background:var(--ink);color:var(--bg)}
+.dock .d2{background:var(--crema);color:#2A1810}
+@media (max-width:820px){.dock{display:flex}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="Il Leone d'Oro, torna su">
+      <img class="em" src="img/emblema.png" alt="">
+      <img class="wm" src="img/scritta.png" alt="Il Leone d'Oro">
+    </a>
+    <nav aria-label="Menu principale">
+      <ul>
+        <li><a href="#servizi">Servizi</a></li>
+        <li><a href="#orari">Orari</a></li>
+        <li><a href="#dal-1984">Chi siamo</a></li>
+        <li><a class="call" href="tel:+390832361043"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span>Chiama</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero" id="hero" data-moment="giorno">
+    <div class="wrap">
+      <div>
+        <h1 class="sr">Il Leone d'Oro, caffetteria e tabaccheria a Surbo</h1>
+        <img class="wm-big" src="img/scritta.png" alt="" aria-hidden="true">
+        <div class="kicker">
+          <span class="chip"><span class="dot" id="dot"></span><span id="status">Aperto</span></span>
+          <span class="chip">Caffetteria · Tabaccheria</span>
+          <span class="chip">Surbo (LE)</span>
+        </div>
+        <h2 id="moment-title" style="font-size:clamp(42px,6.6vw,84px);margin-top:18px">Pausa caffè e commissioni</h2>
+        <p class="sub" id="moment-sub">Un espresso al banco, poi bollette, ricariche e valori bollati in un colpo solo.</p>
+        <div class="actions">
+          <a class="btn btn-main" href="https://www.google.com/maps/search/?api=1&query=Via+IV+Novembre+61+73010+Surbo+LE" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Indicazioni</a>
+          <a class="btn btn-ghost" href="#servizi">Cosa trovi da noi</a>
+        </div>
+        <div class="day" aria-label="La giornata del bar">
+          <div class="day-head"><span id="day-label">OGGI</span><span id="day-now">--:--</span></div>
+          <div class="day-track"><div class="day-fill" id="day-fill"></div><div class="day-now" id="day-dot"></div></div>
+          <div class="day-ticks" id="day-ticks"></div>
+        </div>
+      </div>
+      <div class="reel-frame">
+        <video src="img/reel.mp4" poster="img/reel-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Video di presentazione: caffè, cocktail, bollette e servizi utili"></video>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="servizi">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Servizi</p>
+        <h2>Quattro banchi, un solo indirizzo</h2>
+        <p>Dal primo caffè all'ultimo pacco della giornata, al Leone d'Oro sbrighi tutto in una fermata.</p>
+      </div>
+      <div class="counters">
+        <article class="counter">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13h17v5a7 7 0 0 1-7 7h-3a7 7 0 0 1-7-7z"/><path d="M22 15h2.5a3 3 0 0 1 0 6H21"/><path d="M4 28h20"/><path d="M11 4c-1 2 1 3 0 5M16 4c-1 2 1 3 0 5"/></svg></span>
+          <div><p class="when">Dalle 05:30</p><h3>Caffetteria</h3></div>
+          <ul>
+            <li>Caffetteria e bevande calde</li>
+            <li>Colazioni con cornetti e paste</li>
+            <li>Cocktail</li>
+            <li>Bibite, succhi e acqua fresca</li>
+          </ul>
+        </article>
+        <article class="counter">
+          <span class="ic t" aria-hidden="true">T</span>
+          <div><p class="when">Rivendita n. 3</p><h3>Tabacchi</h3></div>
+          <ul>
+            <li>Generi di monopolio</li>
+            <li>Valori bollati e marche da bollo</li>
+            <li>Articoli per fumatori</li>
+            <li>Sigarette elettroniche</li>
+            <li>IQOS Partner</li>
+          </ul>
+          <p class="note">Vendita riservata ai maggiorenni.</p>
+        </article>
+        <article class="counter">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h18v26l-3-2-3 2-3-2-3 2-3-2-3 2z"/><path d="M11 10h10M11 15h10M11 20h6"/></svg></span>
+          <div><p class="when">Sportello</p><h3>Servizi utili</h3></div>
+          <ul>
+            <li>Pagamento bollettini e utenze</li>
+            <li>Pagamenti PagoPA</li>
+            <li>Ricariche telefoniche</li>
+            <li>Carte prepagate e ricariche</li>
+            <li>Biglietteria STP</li>
+          </ul>
+        </article>
+        <article class="counter">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"><path d="M4 9.5 16 4l12 5.5v13L16 28 4 22.5z"/><path d="M4 9.5 16 15l12-5.5M16 15v13M10 6.8l12 5.5"/></svg></span>
+          <div><p class="when">Ritiro e spedizione</p><h3>Punto di ritiro</h3></div>
+          <ul>
+            <li>PuntoPoste</li>
+            <li>InPost</li>
+            <li>GLS</li>
+            <li>Amazon</li>
+          </ul>
+        </article>
+      </div>
+      <div class="games">
+        <strong>Ricevitoria</strong>
+        <span>Lotto · SuperEnalotto · Gratta e Vinci · Punto SNAI</span>
+        <small>Gioco vietato ai minori di 18 anni. Il gioco può causare dipendenza patologica.</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="block visit" id="orari">
+    <div class="wrap">
+      <div class="receipt" aria-label="Orari di apertura">
+        <div class="r-head">
+          <b>IL LEONE D'ORO</b>
+          <span>CAFFETTERIA · TABACCHERIA</span>
+          <span>VIA IV NOVEMBRE 61 · SURBO (LE)</span>
+          <span>RIVENDITA N. 3</span>
+        </div>
+        <hr>
+        <div class="r-meta"><span>ORARI DI APERTURA</span><span id="r-date">--/--/----</span></div>
+        <hr>
+        <table><tbody id="hours"></tbody></table>
+        <hr>
+        <div class="r-tot"><span>ORE APERTI/SETT.</span><span id="r-tot">--</span></div>
+        <p class="r-foot">GRAZIE E A DOMANI!</p>
+        <div class="barcode" aria-hidden="true"></div>
+      </div>
+      <div class="where" id="contatti">
+        <p class="eyebrow">Dove siamo</p>
+        <h2>Passa a trovarci</h2>
+        <p class="addr">Via IV Novembre, 61<small>73010 Surbo (LE)</small></p>
+        <a class="btn btn-main" href="https://www.google.com/maps/search/?api=1&query=Via+IV+Novembre+61+73010+Surbo+LE" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Apri in Google Maps</a>
+        <div class="contact-list">
+          <div class="contact">
+            <div><p class="k">Telefono</p><a class="v" id="tel" href="tel:+390832361043">0832 361043</a></div>
+            <button class="copy" type="button" data-copy="tel">Copia</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block since" id="dal-1984">
+    <div class="wrap">
+      <div>
+        <div class="year" aria-hidden="true">1984</div>
+        <p class="year-cap" id="years">DA 42 ANNI IN VIA IV NOVEMBRE</p>
+      </div>
+      <div>
+        <p class="eyebrow">Chi siamo</p>
+        <h2>Un punto fermo di Surbo dal 1984</h2>
+        <p class="txt">Il Leone d'Oro è la caffetteria tabaccheria di Via IV Novembre. Qui si passa per il primo caffè della giornata, per una commissione veloce o per due chiacchiere al bancone.</p>
+        <img class="emb" src="img/emblema.png" alt="Il logo del Leone d'Oro: un leone dentro un cerchio con la scritta Caffetteria - Tabaccheria">
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <img class="wm" src="img/scritta.png" alt="Il Leone d'Oro">
+      <p><b>Caffetteria · Tabaccheria · Rivendita n. 3</b><br>Via IV Novembre, 61 · 73010 Surbo (LE) · Tel. 0832 361043<br>Leone Tabacchi di Leone Giuseppina</p>
+    </div>
+    <div class="soc">
+      <a href="#" aria-label="Instagram (link da inserire)">Instagram</a>
+      <a href="#" aria-label="Facebook (link da inserire)">Facebook</a>
+    </div>
+  </div>
+</footer>
+
+<div class="dock">
+  <a class="d1" href="tel:+390832361043"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Chiama</a>
+  <a class="d2" href="https://www.google.com/maps/search/?api=1&query=Via+IV+Novembre+61+73010+Surbo+LE" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Indicazioni</a>
+</div>
+
+<script>
+// ORARI — modifica qui. Formato "HH:MM"; [] = chiuso.
+const ORARI = {
+  1: [["05:30","21:00"]], 2: [["05:30","21:00"]], 3: [["05:30","21:00"]],
+  4: [["05:30","21:00"]], 5: [["05:30","21:00"]], 6: [["05:30","21:00"]],
+  0: [["08:00","13:30"]]
+};
+const NOMI = {1:"LUN",2:"MAR",3:"MER",4:"GIO",5:"VEN",6:"SAB",0:"DOM"};
+const NOMI_LUNGHI = {1:"lunedì",2:"martedì",3:"mercoledì",4:"giovedì",5:"venerdì",6:"sabato",0:"domenica"};
+const toMin = s => { const [h,m] = s.split(":").map(Number); return h*60+m; };
+const fmt = m => String(Math.floor(m/60)).padStart(2,"0")+":"+String(m%60).padStart(2,"0");
+
+// Scontrino orari
+const tb = document.getElementById("hours");
+let tot = 0;
+const today = new Date().getDay();
+[1,2,3,4,5,6,0].forEach(d => {
+  const f = ORARI[d] || [];
+  f.forEach(([a,b]) => tot += toMin(b)-toMin(a));
+  const tr = document.createElement("tr"); if (d === today) tr.className = "today";
+  tr.innerHTML = `<td>${NOMI[d]}</td><td>${f.length ? f.map(x=>x.join("-")).join(" ") : "CHIUSO"}</td>`;
+  tb.appendChild(tr);
+});
+document.getElementById("r-tot").textContent = (tot/60).toLocaleString("it-IT",{maximumFractionDigits:1});
+
+// Momenti della giornata
+const MOMENTI = [
+  { id:"mattina",    from:"00:00", t:"È l'ora della colazione", s:"Espresso, cappuccino e cornetti caldi per partire col piede giusto." },
+  { id:"giorno",     from:"11:00", t:"Pausa caffè e commissioni", s:"Un espresso al banco, poi bollette, ricariche e valori bollati in un colpo solo." },
+  { id:"pomeriggio", from:"15:00", t:"Pomeriggio da sbrigare", s:"Ritira o spedisci i pacchi: PuntoPoste, InPost, GLS e Amazon." },
+  { id:"sera",       from:"18:00", t:"È sera: cocktail al banco", s:"Chiudi la giornata con un cocktail, fino alle 21:00." }
+];
+
+function tick(){
+  const now = new Date(), d = now.getDay(), mins = now.getHours()*60 + now.getMinutes();
+  const f = ORARI[d] || [];
+  const open = f.find(([a,b]) => mins >= toMin(a) && mins < toMin(b));
+  const hero = document.getElementById("hero");
+  const T = document.getElementById("moment-title"), S = document.getElementById("moment-sub");
+  const st = document.getElementById("status"), dot = document.getElementById("dot");
+
+  if (open) {
+    let m = MOMENTI[0]; MOMENTI.forEach(x => { if (mins >= toMin(x.from)) m = x; });
+    if (d === 0 && m.id !== "mattina") m = { id:"giorno", t:"Domenica mattina al bar", s:"Caffè, cornetti e giornale: siamo aperti fino alle 13:30." };
+    hero.dataset.moment = m.id; T.textContent = m.t; S.textContent = m.s;
+    st.textContent = `Aperto · chiude alle ${open[1]}`; dot.classList.remove("off");
+  } else {
+    // prossima apertura
+    let next = null, label = "";
+    const later = f.find(([a]) => toMin(a) > mins);
+    if (later) { next = later[0]; label = "oggi"; }
+    else for (let k = 1; k <= 7; k++) { const dd = (d+k)%7, ff = ORARI[dd]||[]; if (ff.length) { next = ff[0][0]; label = k===1 ? "domani" : NOMI_LUNGHI[dd]; break; } }
+    hero.dataset.moment = "chiuso";
+    T.textContent = "Ora siamo chiusi";
+    S.textContent = next ? `Riapriamo ${label} alle ${next}. Ti aspettiamo per il primo caffè.` : "Ti aspettiamo presto.";
+    st.textContent = next ? `Chiuso · riapre ${label} alle ${next}` : "Chiuso"; dot.classList.add("off");
+  }
+
+  // barra della giornata
+  const span = f.length ? [toMin(f[0][0]), toMin(f[f.length-1][1])] : [toMin("05:30"), toMin("21:00")];
+  const p = Math.max(0, Math.min(1, (mins - span[0]) / (span[1] - span[0])));
+  document.getElementById("day-fill").style.width = (p*100) + "%";
+  document.getElementById("day-dot").style.left = (p*100) + "%";
+  document.getElementById("day-now").textContent = "ORA " + fmt(mins);
+  document.getElementById("day-label").textContent = NOMI_LUNGHI[d].toUpperCase();
+  const ticks = document.getElementById("day-ticks"); ticks.innerHTML = "";
+  const steps = 4;
+  for (let i = 0; i <= steps; i++) { const s = document.createElement("span"); s.textContent = fmt(Math.round((span[0] + (span[1]-span[0])*i/steps)/15)*15); ticks.appendChild(s); }
+
+  document.getElementById("r-date").textContent = now.toLocaleDateString("it-IT") + " " + fmt(mins);
+}
+tick(); setInterval(tick, 30000);
+
+document.getElementById("years").textContent = `DA ${new Date().getFullYear() - 1984} ANNI IN VIA IV NOVEMBRE`;
+
+document.querySelectorAll(".copy").forEach(b => b.addEventListener("click", () => {
+  const el = document.getElementById(b.dataset.copy), t = el.textContent.trim();
+  const done = () => { b.textContent = "Copiato"; setTimeout(() => b.textContent = "Copia", 1500); };
+  const sel = () => { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+  if (navigator.clipboard) navigator.clipboard.writeText(t).then(done).catch(sel); else sel();
+}));
+</script>
+
+</body>
+</html>
